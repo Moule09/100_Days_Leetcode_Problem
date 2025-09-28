@@ -1,0 +1,30 @@
+Problem Statement : Majority Element 
+
+Approaches : 
+  1- Use Sorting : Definetly Element crossed the Half of the array : Because (majority > n/2) --> Return Middle Element 
+  2- Hash Map-- Count all the occurence of element and check the values >(n/2) Then return the key
+  3- Normar Two loops:
+  4- Boyer Moories Algo
+
+
+Solution : 
+
+
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        candidate =0
+        count=0
+        for vote in nums:
+            if count==0:
+                candidate=vote
+                count=1
+            elif candidate==vote:
+                count=count+1
+            else:
+                count=count-1
+        return candidate
+
